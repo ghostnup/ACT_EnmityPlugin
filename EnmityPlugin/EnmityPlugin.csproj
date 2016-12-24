@@ -125,6 +125,11 @@
     <Compile Include="FFXIVMemory.cs" />
     <Compile Include="FFXIVObject.cs" />
     <Compile Include="FFXIVProcessHelper.cs" />
+    <Compile Include="Messages.zh-CN.Designer.cs">
+      <DependentUpon>Messages.zh-CN.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Messages.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -177,6 +182,13 @@
     <EmbeddedResource Include="EnmityOverlayConfigPanel.resx">
       <DependentUpon>EnmityOverlayConfigPanel.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnmityOverlayConfigPanel.zh-CN.resx">
+      <DependentUpon>EnmityOverlayConfigPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Messages.zh-CN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Messages.zh-CN.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Messages.ja-JP.resx" />
     <EmbeddedResource Include="Messages.resx">

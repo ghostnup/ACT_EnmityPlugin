@@ -36,7 +36,6 @@
             this.buttonRefreshProcessList = new System.Windows.Forms.Button();
             this.checkFollowFFXIVPlugin = new System.Windows.Forms.CheckBox();
             this.label_ShowOverlay = new System.Windows.Forms.Label();
-            this.checkEnmityVisible = new System.Windows.Forms.CheckBox();
             this.label_Clickthru = new System.Windows.Forms.Label();
             this.checkEnmityClickThru = new System.Windows.Forms.CheckBox();
             this.label_LockOverlay = new System.Windows.Forms.Label();
@@ -67,6 +66,9 @@
             this.table_AggroListSort = new System.Windows.Forms.TableLayoutPanel();
             this.combo_AggroListSortKey = new System.Windows.Forms.ComboBox();
             this.check_AggroListSortDescend = new System.Windows.Forms.CheckBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.checkEnmityWindowVisible = new System.Windows.Forms.CheckBox();
+            this.checkEnmityVisible = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel7.SuspendLayout();
             this.table_Process.SuspendLayout();
             this.table_URL.SuspendLayout();
@@ -77,6 +79,7 @@
             this.tableLayoutPanel8.SuspendLayout();
             this.table_MemorySetting.SuspendLayout();
             this.table_AggroListSort.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel7
@@ -85,7 +88,6 @@
             this.tableLayoutPanel7.Controls.Add(this.label_Process, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.table_Process, 1, 0);
             this.tableLayoutPanel7.Controls.Add(this.label_ShowOverlay, 0, 1);
-            this.tableLayoutPanel7.Controls.Add(this.checkEnmityVisible, 1, 1);
             this.tableLayoutPanel7.Controls.Add(this.label_Clickthru, 0, 2);
             this.tableLayoutPanel7.Controls.Add(this.checkEnmityClickThru, 1, 2);
             this.tableLayoutPanel7.Controls.Add(this.label_LockOverlay, 0, 3);
@@ -104,6 +106,7 @@
             this.tableLayoutPanel7.Controls.Add(this.table_MemorySetting, 1, 8);
             this.tableLayoutPanel7.Controls.Add(this.label_AggroListSort, 0, 9);
             this.tableLayoutPanel7.Controls.Add(this.table_AggroListSort, 1, 9);
+            this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel1, 1, 1);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             // 
             // label_Process
@@ -146,13 +149,6 @@
             // 
             resources.ApplyResources(this.label_ShowOverlay, "label_ShowOverlay");
             this.label_ShowOverlay.Name = "label_ShowOverlay";
-            // 
-            // checkEnmityVisible
-            // 
-            resources.ApplyResources(this.checkEnmityVisible, "checkEnmityVisible");
-            this.checkEnmityVisible.Name = "checkEnmityVisible";
-            this.checkEnmityVisible.UseVisualStyleBackColor = true;
-            this.checkEnmityVisible.CheckedChanged += new System.EventHandler(this.checkEnmityVisible_CheckedChanged);
             // 
             // label_Clickthru
             // 
@@ -379,6 +375,27 @@
             this.check_AggroListSortDescend.UseVisualStyleBackColor = true;
             this.check_AggroListSortDescend.CheckedChanged += new System.EventHandler(this.check_AggroListSortDescend_CheckedChanged);
             // 
+            // tableLayoutPanel1
+            // 
+            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
+            this.tableLayoutPanel1.Controls.Add(this.checkEnmityWindowVisible, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.checkEnmityVisible, 0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            // 
+            // checkEnmityWindowVisible
+            // 
+            resources.ApplyResources(this.checkEnmityWindowVisible, "checkEnmityWindowVisible");
+            this.checkEnmityWindowVisible.Name = "checkEnmityWindowVisible";
+            this.checkEnmityWindowVisible.UseVisualStyleBackColor = true;
+            this.checkEnmityWindowVisible.CheckedChanged += new System.EventHandler(this.checkEnmityWindowVisible_CheckedChanged);
+            // 
+            // checkEnmityVisible
+            // 
+            resources.ApplyResources(this.checkEnmityVisible, "checkEnmityVisible");
+            this.checkEnmityVisible.Name = "checkEnmityVisible";
+            this.checkEnmityVisible.UseVisualStyleBackColor = true;
+            this.checkEnmityVisible.CheckedChanged += new System.EventHandler(this.checkEnmityVisible_CheckedChanged);
+            // 
             // EnmityOverlayConfigPanel
             // 
             resources.ApplyResources(this, "$this");
@@ -402,6 +419,8 @@
             this.table_MemorySetting.PerformLayout();
             this.table_AggroListSort.ResumeLayout(false);
             this.table_AggroListSort.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -446,5 +465,7 @@
         private System.Windows.Forms.TableLayoutPanel table_AggroListSort;
         private System.Windows.Forms.ComboBox combo_AggroListSortKey;
         private System.Windows.Forms.CheckBox check_AggroListSortDescend;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.CheckBox checkEnmityWindowVisible;
     }
 }

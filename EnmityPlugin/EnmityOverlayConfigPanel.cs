@@ -35,6 +35,7 @@ namespace Tamagawa.EnmityPlugin
         private void SetupControlProperties()
         {
             this.checkEnmityVisible.Checked = this.config.IsVisible;
+            this.checkEnmityWindowVisible.Checked = this.config.IsWindowVisible;
             this.checkEnmityClickThru.Checked = this.config.IsClickThru;
             this.checkLock.Checked = this.config.IsLocked;
             this.textEnmityUrl.Text = this.config.Url;
@@ -58,6 +59,13 @@ namespace Tamagawa.EnmityPlugin
                 this.InvokeIfRequired(() =>
                 {
                     this.checkEnmityVisible.Checked = e.IsVisible;
+                });
+            };
+            this.config.WinVisibleChanged += (o, e) =>
+            {
+                this.InvokeIfRequired(() =>
+                {
+                    this.checkEnmityWindowVisible.Checked = e.IsWindowVisible;
                 });
             };
             this.config.ClickThruChanged += (o, e) =>
@@ -178,7 +186,23 @@ namespace Tamagawa.EnmityPlugin
             this.config.IsVisible = this.checkEnmityVisible.Checked;
             if (this.overlay != null)
             {
-                if (this.config.IsVisible == true) {
+                if (this.config.IsVisible == true || this.config.IsWindowVisible == true) {
+                    this.overlay.Start();
+                }
+                else
+                {
+                    this.overlay.Stop();
+                }
+            }
+        }
+
+        private void checkEnmityWindowVisible_CheckedChanged(object sender, EventArgs e)
+        {
+            this.config.IsWindowVisible = this.checkEnmityWindowVisible.Checked;
+            if (this.overlay != null)
+            {
+                if (this.config.IsVisible == true || this.config.IsWindowVisible == true)
+                {
                     this.overlay.Start();
                 }
                 else

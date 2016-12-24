@@ -172,7 +172,14 @@ namespace Tamagawa.EnmityPlugin
                     this.Overlay.Renderer != null &&
                     this.Overlay.Renderer.Browser != null)
                 {
-                    this.Overlay.Renderer.Browser.GetMainFrame().ExecuteJavaScript(updateScript, null, 0);
+                    this.Overlay.Renderer.ExecuteScript(updateScript);
+                }
+
+                if (this.Overlay2 != null &&
+                    this.Overlay2.Renderer != null &&
+                    this.Overlay2.Renderer.Browser != null)
+                {
+                    this.Overlay2.Renderer.ExecuteScript(updateScript);
                 }
             }
             catch (Exception ex)
@@ -336,7 +343,7 @@ namespace Tamagawa.EnmityPlugin
                 LogInfo(OverlayAddonMain.UpdateMessage);
                 OverlayAddonMain.UpdateMessage = String.Empty;
             }
-            if (this.Config.IsVisible == false)
+            if (this.Config.IsVisible == false && this.Config.IsWindowVisible == false)
             {
                 return;
             }

@@ -39,6 +39,7 @@ namespace Tamagawa.EnmityPlugin
             this.checkEnmityClickThru.Checked = this.config.IsClickThru;
             this.checkLock.Checked = this.config.IsLocked;
             this.textEnmityUrl.Text = this.config.Url;
+            this.textEnmityUrl2.Text = this.config.Url2;
             this.nudEnmityMaxFrameRate.Value = this.config.MaxFrameRate;
             this.nudEnmityScanInterval.Value = this.config.ScanInterval;
             this.checkEnmityEnableGlobalHotkey.Checked = this.config.GlobalHotkeyEnabled;
@@ -87,6 +88,13 @@ namespace Tamagawa.EnmityPlugin
                 this.InvokeIfRequired(() =>
                 {
                     this.textEnmityUrl.Text = e.NewUrl;
+                });
+            };
+            this.config.Url2Changed += (o, e) =>
+            {
+                this.InvokeIfRequired(() =>
+                {
+                    this.textEnmityUrl2.Text = e.NewUrl2;
                 });
             };
             this.config.MaxFrameRateChanged += (o, e) =>
@@ -227,6 +235,16 @@ namespace Tamagawa.EnmityPlugin
             this.config.Url = this.textEnmityUrl.Text;
         }
 
+        private void textEnmityUrl_Leave(object sender, EventArgs e)
+        {
+            this.config.Url = this.textEnmityUrl.Text;
+        }
+
+        private void textEnmityUrl2_Leave(object sender, EventArgs e)
+        {
+            this.config.Url2 = this.textEnmityUrl2.Text;
+        }
+
         private void buttonEnmitySelectFile_Click(object sender, EventArgs e)
         {
             var ofd = new OpenFileDialog();
@@ -234,6 +252,16 @@ namespace Tamagawa.EnmityPlugin
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 this.config.Url = new Uri(ofd.FileName).ToString();
+            }
+        }
+
+        private void buttonEnmitySelectFile2_Click(object sender, EventArgs e)
+        {
+            var ofd = new OpenFileDialog();
+
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                this.config.Url2 = new Uri(ofd.FileName).ToString();
             }
         }
 
@@ -249,6 +277,7 @@ namespace Tamagawa.EnmityPlugin
         private void buttonEnmityReloadBrowser_Click(object sender, EventArgs e)
         {
             this.overlay.Navigate(this.config.Url);
+            this.overlay.Navigate2(this.config.Url2);
         }
 
         private void nudEnmityMaxFrameRate_ValueChanged(object sender, EventArgs e)

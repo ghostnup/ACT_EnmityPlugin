@@ -42,6 +42,10 @@
             this.checkLock = new System.Windows.Forms.CheckBox();
             this.label_URL = new System.Windows.Forms.Label();
             this.table_URL = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.textEnmityUrl2 = new System.Windows.Forms.TextBox();
+            this.buttonEnmitySelectFile2 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.textEnmityUrl = new System.Windows.Forms.TextBox();
             this.buttonEnmitySelectFile = new System.Windows.Forms.Button();
             this.label_ScanInterval = new System.Windows.Forms.Label();
@@ -72,6 +76,8 @@
             this.tableLayoutPanel7.SuspendLayout();
             this.table_Process.SuspendLayout();
             this.table_URL.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEnmityScanInterval)).BeginInit();
             this.table_Hotkey.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEnmityMaxFrameRate)).BeginInit();
@@ -182,15 +188,42 @@
             // table_URL
             // 
             resources.ApplyResources(this.table_URL, "table_URL");
-            this.table_URL.Controls.Add(this.textEnmityUrl, 0, 0);
-            this.table_URL.Controls.Add(this.buttonEnmitySelectFile, 1, 0);
+            this.table_URL.Controls.Add(this.tableLayoutPanel3, 1, 0);
+            this.table_URL.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.table_URL.Name = "table_URL";
+            // 
+            // tableLayoutPanel3
+            // 
+            resources.ApplyResources(this.tableLayoutPanel3, "tableLayoutPanel3");
+            this.tableLayoutPanel3.Controls.Add(this.textEnmityUrl2, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.buttonEnmitySelectFile2, 1, 0);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            // 
+            // textEnmityUrl2
+            // 
+            resources.ApplyResources(this.textEnmityUrl2, "textEnmityUrl2");
+            this.textEnmityUrl2.Name = "textEnmityUrl2";
+            this.textEnmityUrl2.Leave += new System.EventHandler(this.textEnmityUrl2_Leave);
+            // 
+            // buttonEnmitySelectFile2
+            // 
+            resources.ApplyResources(this.buttonEnmitySelectFile2, "buttonEnmitySelectFile2");
+            this.buttonEnmitySelectFile2.Name = "buttonEnmitySelectFile2";
+            this.buttonEnmitySelectFile2.UseVisualStyleBackColor = true;
+            this.buttonEnmitySelectFile2.Click += new System.EventHandler(this.buttonEnmitySelectFile2_Click);
+            // 
+            // tableLayoutPanel2
+            // 
+            resources.ApplyResources(this.tableLayoutPanel2, "tableLayoutPanel2");
+            this.tableLayoutPanel2.Controls.Add(this.textEnmityUrl, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.buttonEnmitySelectFile, 1, 0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             // 
             // textEnmityUrl
             // 
             resources.ApplyResources(this.textEnmityUrl, "textEnmityUrl");
             this.textEnmityUrl.Name = "textEnmityUrl";
-            this.textEnmityUrl.TextChanged += new System.EventHandler(this.textEnmityUrl_TextChanged);
+            this.textEnmityUrl.Leave += new System.EventHandler(this.textEnmityUrl_Leave);
             // 
             // buttonEnmitySelectFile
             // 
@@ -284,8 +317,8 @@
             // 
             // panel_Buttons
             // 
-            resources.ApplyResources(this.panel_Buttons, "panel_Buttons");
             this.panel_Buttons.Controls.Add(this.tableLayoutPanel8);
+            resources.ApplyResources(this.panel_Buttons, "panel_Buttons");
             this.panel_Buttons.Name = "panel_Buttons";
             // 
             // tableLayoutPanel8
@@ -350,9 +383,9 @@
             // 
             // table_AggroListSort
             // 
-            resources.ApplyResources(this.table_AggroListSort, "table_AggroListSort");
             this.table_AggroListSort.Controls.Add(this.combo_AggroListSortKey, 0, 0);
             this.table_AggroListSort.Controls.Add(this.check_AggroListSortDescend, 1, 0);
+            resources.ApplyResources(this.table_AggroListSort, "table_AggroListSort");
             this.table_AggroListSort.Name = "table_AggroListSort";
             // 
             // combo_AggroListSortKey
@@ -408,7 +441,10 @@
             this.table_Process.ResumeLayout(false);
             this.table_Process.PerformLayout();
             this.table_URL.ResumeLayout(false);
-            this.table_URL.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEnmityScanInterval)).EndInit();
             this.table_Hotkey.ResumeLayout(false);
             this.table_Hotkey.PerformLayout();
@@ -467,5 +503,9 @@
         private System.Windows.Forms.CheckBox check_AggroListSortDescend;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.CheckBox checkEnmityWindowVisible;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.TextBox textEnmityUrl2;
+        private System.Windows.Forms.Button buttonEnmitySelectFile2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
     }
 }
